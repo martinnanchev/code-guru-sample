@@ -251,3 +251,4 @@ def update_jira_ticket(ticket_id, message):
           f' request:{jira_comment_response.status}')
 
     return jira_comment_response
+
