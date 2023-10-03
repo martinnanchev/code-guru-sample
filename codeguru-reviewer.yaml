@@ -1,0 +1,6 @@
+version: 1
+rules:
+  - name: python-best-practices
+    sourceCodeType: "Python"
+    ruleCode: "CR1000"
+    ruleDescription: "Checks for Python best practices."
