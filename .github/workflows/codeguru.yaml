@@ -15,17 +15,12 @@ jobs:
     name: Analyze with CodeGuru Reviewer
     runs-on: ubuntu-latest
     steps:
-    - name: Authorize
-      id: authorize-modulesrepo
-      uses: Flutter-Global/dtpl-githubactions-modulesauthorization@main
-      with:
-        ghbtoken: ${{ secrets.GHB_TOKEN}}
     - name: Configure AWS credentials
       id: iam-role
       continue-on-error: true
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::478163696620:role/github-ci-role
+        role-to-assume: ${{ secrets.GHB_TOKEN }}
         aws-region: eu-west-1
 
     - uses: actions/checkout@v2
