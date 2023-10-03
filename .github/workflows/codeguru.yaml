@@ -9,6 +9,7 @@ permissions:
     contents: read
     security-events: write
 
+
 jobs:
   build:
     name: Analyze with CodeGuru Reviewer
@@ -19,7 +20,7 @@ jobs:
       continue-on-error: true
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::478163696620:role/github-ci-role
+        role-to-assume: ${{ secrets.GHB_TOKEN }}
         aws-region: eu-west-1
 
     - uses: actions/checkout@v2
